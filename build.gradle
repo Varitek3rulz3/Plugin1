@@ -1,0 +1,17 @@
+
+apply plugin: 'java-library'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'sponge'
+        url = 'https://repo.spongepowered.org/maven'
+    }
+}
+
+dependencies {
+    compile 'org.spongepowered:spongeapi:7.0.0'
+}
+
+
+
