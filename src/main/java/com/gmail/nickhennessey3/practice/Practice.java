@@ -3,6 +3,8 @@ package com.gmail.nickhennessey3.practice;
 
 import java.util.logging.Logger;
 import org.spongepowered.api.Sponge;
+import org.spongepowered.api.command.CommandCallable;
+import org.spongepowered.api.command.CommandManager;
 import org.spongepowered.api.command.spec.CommandSpec;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.game.state.GameInitializationEvent;
@@ -37,6 +39,12 @@ public class Practice {
 		getLogger().info(String);
 	    
 		this.getLogger().info("Loading...");
+		
+		CommandManager cmdManager = Sponge.getCommandManager();
+		
+		CommandCallable myCommandSpec = null;
+		
+		cmdManager.register(this, myCommandSpec, "alias1", "alias2", "alias3");
 		
 		CommandSpec practiceCommandSpec = CommandSpec.builder()
 				.description(Text.of("Output based on Source"))
